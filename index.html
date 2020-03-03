@@ -4,24 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <a id="view-highscores" href="blank"></a>
+    <div class="header">
+        <a id="view-highscores" href="#">View Highscores</a>
         <div id="timer"></div>
-    </header>
-
-    <div id="container">
-        <h1 id="welcome-questions"></h1>
-        <br>
-        <h5 id="information"></h5>
-        <div id="buttons">
-
-            
-        </div>
-
     </div>
 
+    <div class="main">
+
+        <div class="main-container" id="welcome-container">
+            <br><br>
+            <h1 id="welcome">Coding Quiz Challenge</h1>
+            <br>
+            <p id="information">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answer will penalize your score/time by ten seconds!</p>
+            <br>
+            <div id="buttons">
+                <button type="button" class="btn btn-primary rounded" id="start-quiz">Start Quiz</button>
+            </div>
+        </div>   
+
+        <div class="main-container" id="question-container">
+            <br><br>
+            <h1 id="quiz-question"></h1>
+            <br>
+            <div class="answer-buttons" id="buttons">
+                <button type="button" class="btn btn-primary rounded" id="opt1">test text</button>
+                <button type="button" class="btn btn-primary rounded" id="opt2">test text</button>
+                <button type="button" class="btn btn-primary rounded" id="opt3"></button>
+                <button type="button" class="btn btn-primary rounded" id="opt4"></button>
+            </div>
+        </div>    
+
+    </div>
 
 
 

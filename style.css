@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    padding: 0 1rem;
+}
+
+.main-container {
+    margin: auto;
+    width: 50%;
+}
+
+#timer {
+    float: right;
+    clear: both;
+}
+
+#welcome-container {
+    text-align: center;
+}
+
+#opt1, #opt2, #opt3, #opt4 {
+    float: left;
+    clear: left;
+    margin: 0.25rem 0;
+}
+
+#buttons:hover {
+    opacity: 70%;
+}

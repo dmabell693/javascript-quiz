@@ -1,6 +1,7 @@
 var information = document.getElementById("information");
 var timer = document.getElementById("timer");
 var startButton = document.getElementById("start-quiz");
+var answerButtons = document.querySelector(".answer-buttons");
 var welcomeContainer = document.getElementById("welcome-container");
 var questionContainer = document.getElementById("question-container");
 var quizQuestion = document.getElementById("quiz-question");
@@ -13,16 +14,40 @@ var userScore = 0;
 
 questionContainer.style.display= "none";
 
-function Question(text, choices, answer) {
-  this.text = text;
-  this.choices = choices;
-  this.answer = answer;
-};
 
-var questAnsArr = [
-  new Question("What color is my hair?", ["Green", "Blue", "Blonde", "Grey"], "Blonde"),
-  new Question("Who wins Super Tuesday?", ["Bernie", "Biden", "Bloomberg", "Warren"], "Bernie")
+var myQuestions = [
+  {
+    q: "What is the color of my hair?",
+    o: [
+      "blonde",
+      "black",
+      "green",
+      "orange"
+    ],
+    a: 0
+  },
+  {
+    q: "When does the sun rise tomorrow?",
+    o: [
+      "1am",
+      "2am",
+      "morning",
+      "6am"
+    ],
+    a: 3
+  },
+  {
+    q: "What time is work tomorrow?",
+    o: [
+      "never",
+      "always",
+      "3am",
+      "7am"
+    ],
+    a: 3
+  }
 ];
+
 
 var timeLeft;
 
@@ -43,20 +68,32 @@ function beginQuiz() {
   beginQuestions();
 };
 
-
+i = 0;
 var beginQuestions = function() {
   event.preventDefault;
   welcomeContainer.style.display = "none";
   questionContainer.style.display= "block";
 
-  quizQuestion.textContent = Question.text;
-  var choices = Question.choices;
-  for (var i = 0; i < choices.length; i++) {
-      var element = document.getElementById("opt" + i);
-      element.innerHTML = choices[i];
-  }
 
+  quizQuestion.textContent = myQuestions[i]["q"];
 
+  opt1.textContent = myQuestions[i]["o"][0];
+  opt2.textContent = myQuestions[i]["o"][1];
+  opt3.textContent = myQuestions[i]["o"][2];
+  opt4.textContent = myQuestions[i]["o"][3];
+
+  console.log(myQuestions[i]["a"].value);
+
+  var userGuess = event.target.value;
+  console.log(userGuess);
+  if (userGuess = myQuestions[i]["a"]) {
+    console.log("Hey fuckface");
+  } 
+
+  i++;
 }
 
+
+
 startButton.addEventListener("click", beginQuiz);
+answerButtons.addEventListener("click", beginQuestions);

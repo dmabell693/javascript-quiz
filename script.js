@@ -6,9 +6,13 @@ var welcomeContainer = document.getElementById("welcome-container");
 var questionContainer = document.getElementById("question-container");
 var quizQuestion = document.getElementById("quiz-question");
 var opt1 = document.getElementById("opt1");
+// opt1.addEventListener("click", checkAnswer);
 var opt2 = document.getElementById("opt2");
+// opt2.addEventListener("click", checkAnswer);
 var opt3 = document.getElementById("opt3");
+// opt3.addEventListener("click", checkAnswer);
 var opt4 = document.getElementById("opt4");
+// opt4.addEventListener("click", checkAnswer);
 
 var userScore = 0;
 
@@ -24,7 +28,7 @@ var myQuestions = [
       "green",
       "orange"
     ],
-    a: 0
+    a: "opt1"
   },
   {
     q: "When does the sun rise tomorrow?",
@@ -34,7 +38,7 @@ var myQuestions = [
       "morning",
       "6am"
     ],
-    a: 3
+    a: "opt4"
   },
   {
     q: "What time is work tomorrow?",
@@ -44,7 +48,7 @@ var myQuestions = [
       "3am",
       "7am"
     ],
-    a: 3
+    a: "opt4"
   }
 ];
 
@@ -68,7 +72,7 @@ function beginQuiz() {
   beginQuestions();
 };
 
-i = 0;
+var i = 0;
 var beginQuestions = function() {
   event.preventDefault;
   welcomeContainer.style.display = "none";
@@ -81,19 +85,32 @@ var beginQuestions = function() {
   opt2.textContent = myQuestions[i]["o"][1];
   opt3.textContent = myQuestions[i]["o"][2];
   opt4.textContent = myQuestions[i]["o"][3];
-
-  console.log(myQuestions[i]["a"].value);
-
-  var userGuess = event.target.value;
-  console.log(userGuess);
-  if (userGuess = myQuestions[i]["a"]) {
-    console.log("Hey fuckface");
-  } 
-
-  i++;
 }
+  var checkAnswer = function(event) {
+    var userGuess = event.target.id;
+    console.log(userGuess);
+    console.log(myQuestions[i]["a"]);
+    if (userGuess === myQuestions[i]["a"]) {
+      console.log("hey dickhead");
+      userScore++;
+    } else {
+      console.log("alright");
+      timeLeft -= 10;
+    }
+    console.log(userScore);
+    i++;
+    beginQuestions();
+  }
+  
+
+  
+ 
 
 
 
 startButton.addEventListener("click", beginQuiz);
-answerButtons.addEventListener("click", beginQuestions);
+// answerButtons.addEventListener("click", beginQuestions);
+opt1.addEventListener("click", checkAnswer);
+opt2.addEventListener("click", checkAnswer);
+opt3.addEventListener("click", checkAnswer);
+opt4.addEventListener("click", checkAnswer);

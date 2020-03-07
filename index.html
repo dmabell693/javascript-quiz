@@ -31,14 +31,33 @@
             <h1 id="quiz-question"></h1>
             <br>
             <div class="answer-buttons">
-                <button type="button" class="btn btn-primary rounded" id="opt1">test text</button>
-                <button type="button" class="btn btn-primary rounded" id="opt2">test text</button>
+                <button type="button" class="btn btn-primary rounded" id="opt1"></button>
+                <button type="button" class="btn btn-primary rounded" id="opt2"></button>
                 <button type="button" class="btn btn-primary rounded" id="opt3"></button>
                 <button type="button" class="btn btn-primary rounded" id="opt4"></button>
 
                 <!-- add classes for all buttons add event listener use for loop query selector all -->
             </div>
-        </div>    
+            <div id="correct-incorrect">
+
+            </div>
+        </div>
+        
+        <div class="main-container" id="all-done">
+            <h1>All Done!</h1>
+            <p id="final-score-p"></p>
+            <div class="form-inline">
+                <label for="initials">Enter initials:</label>
+                <input type="text" class="form-control form-control-sm" id="initials" aria-describedby="enter initials">
+                <button type="button" class="btn btn-primary btn-sm rounded" id="submit-highscore">Submit</button>
+            </div>
+        </div>
+
+        <div class="main-container" id="highscores">
+            <h1>Highscores</h1>
+            <button type="button" class="btn btn-primary rounded" id="go-back">Go Back</button>
+            <button type="button" class="btn btn-primary rounded" id="clear-highscores">Clear Highscores</button>
+        </div>
 
     </div>
 

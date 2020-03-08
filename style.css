@@ -10,6 +10,14 @@ input {
     margin-right: .5rem;
 }
 
+li {
+    background: white; 
+    padding-left: 1rem;
+}
+
+li:nth-child(odd) { background: #7777;
+}
+
 .header {
     padding: 0 1rem;
 }
